@@ -24,7 +24,7 @@ body {
   background-color: #fff;
   border-radius: 25px;
 }
-
+ 
 a {
   text-decoration: none;
 }
@@ -56,11 +56,12 @@ h1 {
 h2 {
   text-transform: uppercase;
   letter-spacing: 4px;
+  text-align: center;
 }
 
 .social-media {
   margin-top: 1rem;
-  display: flex;
+  
 }
 
 .social-media a {
@@ -357,42 +358,10 @@ a:hover {
   margin: 30px;
 }
 
-/* RESPONSIVO */
-
-@media (max-width: 800px) {
-  .social-media {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .container {
-    margin-top: 0;
-  }
-
-  .card-container {
-    flex-direction: column;
-  }
-
-  .container .card-container:nth-child(1),
-  .container .card-container:nth-child(3) {
-    flex-direction: column-reverse;
-  }
-
-  .card {
-    height: 250px;
-    width: 250px;
-  }
-
-  .card-text {
-    width: 90%;
-    margin-top: 2rem;
-    text-align: center;
-  }
-
-  .card:hover>.card-wrapper::before {
-    height: 190px;
-    width: 190px;
-  }
+.align-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .skills-title {
@@ -405,12 +374,12 @@ a:hover {
 
 .skills {
   display: grid;
-  grid-template-columns: auto auto auto;
-  margin: 8px 30px 0 0;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
   gap: 40px;
   border: 1px solid #2E1C2B;
   border-radius: 5px;
-  padding: 30px;
+  padding: 25px;
 }
 
 .skill {
@@ -509,5 +478,59 @@ a:hover {
 @-webkit-keyframes blink-animation {
   to {
     visibility: hidden;
+  }
+}
+
+/* RESPONSIVO */
+
+@media (max-width:1200px) {
+  .cards {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width:1000px) {
+  .skills{grid-template-columns: repeat(2, 1fr);}
+}
+
+@media (max-width:700px) {
+  .skills{grid-template-columns: repeat(1, 1fr);}
+}
+
+@media (max-width: 800px) {
+  .social-media {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .container {
+    margin-top: 0;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .container .card-container:nth-child(1),
+  .container .card-container:nth-child(3) {
+    flex-direction: column-reverse;
+  }
+
+  .card {
+    height: 250px;
+    width: 250px;
+  }
+
+  .card-text {
+    width: 90%;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .card:hover>.card-wrapper::before {
+    height: 190px;
+    width: 190px;
   }
 }
