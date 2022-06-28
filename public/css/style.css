@@ -61,7 +61,7 @@ h2 {
 
 .social-media {
   margin-top: 1rem;
-  
+  display: flex;
 }
 
 .social-media a {
